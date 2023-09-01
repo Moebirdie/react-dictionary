@@ -7,8 +7,8 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import CycloneIcon from '@mui/icons-material/Cyclone';
+import GridViewIcon from '@mui/icons-material/GridView';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 
@@ -29,14 +29,14 @@ const TopDrawer = () => {
 
   return (
     <div>
-      <Button 
-      color='secondary'
-      onClick={toggleDrawer(true)}
+      <Button
+        color='secondary'
+        onClick={toggleDrawer(true)}
       >
         Menu
       </Button>
       <SwipeableDrawer
-        anchor={'top'}
+        anchor={'left'}
         open={state}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer(true)}
@@ -48,14 +48,26 @@ const TopDrawer = () => {
           onKeyDown={toggleDrawer(false)}
         >
           <List>
+            {['Random Word'].map((text, index) => (
+              <ListItem key={text} disablePadding>
+                <ListItemButton onClick={() => navigate('/')}>
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <CycloneIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+                
+              </ListItem>
+            ))};
             {['Multiple Choice'].map((text, index) => (
               <ListItem key={text} disablePadding>
                 <ListItemButton onClick={() => navigate('/multi')}>
                   <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                    {index % 2 === 0 ? <GridViewIcon /> : <MailIcon />}
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
+                
               </ListItem>
             ))}
           </List>

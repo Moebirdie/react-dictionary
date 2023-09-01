@@ -18,7 +18,7 @@ const rawTheme = createTheme({
       secondary: '#040403',
     },
     background: {
-      default: '#32a852',
+      default: '#FFFFF0',
       paper: '#eceff5',
     },
     warning: {
