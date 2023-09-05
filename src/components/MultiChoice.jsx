@@ -41,7 +41,7 @@ export default function MultiChoice(props) {
   return (
     <Grid
       container
-      spacing={4}
+      //spacing={4}
       direction="column"
       justifyContent="space-between"
       alignItems="center"
@@ -51,7 +51,7 @@ export default function MultiChoice(props) {
       </Grid>
       <Grid
         container
-        spacing={4}
+        //spacing={4}
         direction="row"
         justifyContent="flex-start"
         alignItems="flex-start"
@@ -60,7 +60,7 @@ export default function MultiChoice(props) {
         </Grid>
         <Grid item xs={8}>
           <Button onClick={getWords} variant='contained'>
-            Get 4 Random Words
+            Get Word List
           </Button>
           <Stack direction='column' spacing={1}>
 

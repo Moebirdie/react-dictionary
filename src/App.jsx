@@ -17,18 +17,23 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Grid container>
-      <Grid item xs={3}>
-      <IconMenu  />
-      </Grid>
-      <Grid item>
+      <TopDrawer />
+      <Grid container dirction='row'>
+      <Grid item xs={2} 
+        alignItems='top'>
       <DictionarySelects setActiveDictionary={setActiveDictionary} />
       </Grid>
-      </Grid>
+      <Grid item 
+      xs={9}
+      marginTop={6}
+      display='flex'
+      justifyContent='center'>
       <Routes>
         <Route path='/' element={<Home activeDictionary={activeDictionary} />} />
         <Route path='/multi' element={<MultiChoice activeDictionary={activeDictionary}/>} />
       </Routes>
+      </Grid>
+      </Grid>
     </ThemeProvider>
   );
 }
