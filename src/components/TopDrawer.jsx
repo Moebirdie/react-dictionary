@@ -29,12 +29,16 @@ const TopDrawer = () => {
 
   return (
     <div>
-      <Button
-        color='secondary'
-        onClick={toggleDrawer(true)}
+      <div
+        align='left'
       >
-        Menu
-      </Button>
+        <Button
+          color='secondary'
+          onClick={toggleDrawer(true)}
+        >
+          Menu
+        </Button>
+      </div>
       <SwipeableDrawer
         anchor={'left'}
         open={state}
@@ -56,7 +60,7 @@ const TopDrawer = () => {
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
-                
+
               </ListItem>
             ))};
             {['Multiple Choice'].map((text, index) => (
@@ -67,7 +71,7 @@ const TopDrawer = () => {
                   </ListItemIcon>
                   <ListItemText primary={text} />
                 </ListItemButton>
-                
+
               </ListItem>
             ))}
           </List>

@@ -26,10 +26,10 @@ function DictionarySelects(props) {
 
   return (
     <div>
-      <Stack direction='row' justifyContent={'space-around'} >
+      <Stack direction='column'>
         {dictionaries &&
           dictionaries.map((d, index) => (
-            <Chip
+            <Chip  
             color={d._id !== selectedDictionary._id  ? "primary" : "secondary"}
              label={d.title}
               key={index}
